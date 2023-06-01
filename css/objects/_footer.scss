@@ -1,0 +1,84 @@
+// ==============================================================================
+// General Footer Styles
+// ==============================================================================
+.footer {
+  background-color: $bgOrange;
+  color: $textOnOrange;
+  @include docsFont();
+
+  p {
+    margin: 0;
+
+    @include responsify( $palm_down ) {
+      br {
+        display: none;
+      }
+    }
+  }
+}
+
+.footer-link,
+.footer-link:visited {
+  color: #fff;
+  border-bottom: 1px solid #f1b788;
+  text-decoration: none;
+
+  &:hover {
+    color: #fff;
+    border-bottom-color: #fff;
+  }
+}
+
+.footer-large {
+  padding: ($margin * 1.5) 0;
+
+  @include responsify( $lap_up ) {
+    .pagewidth {
+      padding:  0 ($margin * 2);
+    }
+  }
+
+  .grid__item {
+    margin-bottom: ($margin / 2);
+  }
+
+  @include responsify( $portable_up ) {
+    .grid__item {
+      margin: 0;
+    }
+  }
+}
+
+.footer-bar {
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding: $margin 0;
+
+  @include responsify( $lap_up ) {
+    .pagewidth {
+      padding:  0 ($margin * 2);
+    }
+  }
+}
+
+.footer-title {
+  color: #fff;
+  @include docsFont();
+}
+
+.shopify-logo {
+  display: block;
+  text-indent: -999em;
+  height: 28px;
+  width: 99px;
+  margin: ($margin / 2) 0;
+  background: url('../images/shopify-logo-white.png') top left no-repeat;
+
+  @include hidpi() {
+    background-image: url('../images/shopify-logo-white-2x.png');
+    background-size: 99px auto;
+  }
+
+  @include responsify( $portable_up, true ) {
+    margin: -3px 0 0;
+  }
+}
